@@ -1,0 +1,11 @@
+{
+  "name": "dfi-erc20",
+  "version": "1.0.0",
+  "description": "DFI as ERC20",
+  "main": "index.js",
+  "author": "DeFiChain Developers <engineering@defichain.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.3.0"
+  }
+}
