@@ -20,9 +20,9 @@ contract DFI is Context, AccessControl, ERC20Burnable {
      * See {ERC20-constructor}.
      */
     constructor() public ERC20("DeFiChain Token", "DFI") {
-        _setupDecimals(8);
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
+        _setupDecimals(8);        
     }
 
     /**
