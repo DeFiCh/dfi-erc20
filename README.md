@@ -6,5 +6,5 @@
 
 ## Contracts
 
-- Kovan testnet: [0x4bc4a6e03c9346e255403b0dd25fa7d00ec75913](https://kovan.etherscan.io/address/0x4bc4a6e03c9346e255403b0dd25fa7d00ec75913) (Verified)
+- Kovan testnet: [0xf372760ac13fc97abb6b86865fb79ef59c128e07](https://kovan.etherscan.io/address/0xf372760ac13fc97abb6b86865fb79ef59c128e07) (Verified)
 

@@ -15,6 +15,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol";
  */
 contract DFI is Context, AccessControl, ERC20Burnable {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+    string private _backingAddress = "dZFYejknFdHMHNfHMNQAtwihzvq7DkzV49";
 
     /**
      * See {ERC20-constructor}.
@@ -29,11 +30,27 @@ contract DFI is Context, AccessControl, ERC20Burnable {
      * @dev Creates `amount` new tokens for `to`.
      *
      * Requirements:
-     *
      * - the caller must have the `MINTER_ROLE`.
      */
     function mint(address to, uint256 amount) public virtual {
         require(hasRole(MINTER_ROLE, _msgSender()), "DFI: must have minter role to mint");
         _mint(to, amount);
     }
+
+    /**
+     * @dev Returns backing address of DFI on DeFiChain
+     */
+    function backingAddress() public view returns (string memory) {
+        return _backingAddress;
+    }
+
+    /**
+     * @dev Sets and overrides the backing address on DeFiChain
+     * Requires admin's role
+     */
+    function setBackingAddress(string memory backingAddress_) public virtual {
+      require(hasRole(DEFAULT_ADMIN_ROLE, _msgSender()), "DFI: must have admin role to set backing address");
+      _backingAddress = backingAddress_;
+    }
+
 }
