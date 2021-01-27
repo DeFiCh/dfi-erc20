@@ -48,9 +48,9 @@ contract DFI is Context, AccessControl, ERC20Burnable {
      * @dev Sets and overrides the backing address on DeFiChain
      * Requires admin's role
      */
-    function setBackingAddress(string backingAddress) public virtual {
+    function setBackingAddress(string memory backingAddress_) public virtual {
       require(hasRole(DEFAULT_ADMIN_ROLE, _msgSender()), "DFI: must have admin role to set backing address");
-      _backingAddress = backingAddress;
+      _backingAddress = backingAddress_;
     }
 
 }
